@@ -24,10 +24,11 @@ function inputValidation(str){
 
 function matchRegex(str) {
   let regexUrl = 
-      new RegExp(/(https?:\/\/)?(www\.)?(\w{0,1000}\.)?[a-z0-9]+\.\w{2,3}(\.br)?(\/\w{0,1000}\/\w{0,1000})?/g);
+      new RegExp(/(https?:\/\/)?(www\.)?(\w+\.)?[a-z0-9]+\.\w{2,3}(\.br)?(\/\w*\/\w*)?/g);
+
   let urls = str.match(regexUrl);
 
-  let regexTextUrl = new RegExp( /(?<=\[)\w{0,50}(?=\])/g ) 
+  let regexTextUrl = new RegExp( /(?<=\[)(.*?)(?=\])/g ) 
   let textUrl = str.match(regexTextUrl);
 
   let urlAndText = [];
