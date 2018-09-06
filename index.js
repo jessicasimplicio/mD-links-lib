@@ -3,10 +3,20 @@ function getLinksFromMd(str){
 	let urls = str.match(regexUrl);
 
 	let regexTextUrl = new RegExp(/\[\w{0,1000}\]/g);
-	let text = str.match(regexTextUrl);
+	let textUrl = str.match(regexTextUrl);
 
-	console.log(urls);
-	console.log(text);
+  let urlAndText = [];
+  
+  //USAR MAP
+  urls.forEach(function(item, index) {
+    urlAndText.push({
+      href: item,
+      text: textUrl[index],
+    });
+  });
+
+	console.log(urlAndText);
+	//console.log(text);
 }
 
 getLinksFromMd("# Lorem ipsum Lorem ipsum dolor sit amet, consectetur adipiscing elit," +
@@ -21,3 +31,4 @@ getLinksFromMd("# Lorem ipsum Lorem ipsum dolor sit amet, consectetur adipiscing
 "deserunt mollit anim id est laborum.");
 
 module.export = getLinksFromMd;
+
