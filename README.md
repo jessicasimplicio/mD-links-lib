@@ -33,7 +33,7 @@ array de objetos.
 
 ## roadmap oficial do projeto
 
-#### versão 1.1.0 (previsão outubro/2018)
+#### versão 1.1.0 (released)
 - correção de bugs eventuais bugs;
 - melhoria no código;
 
